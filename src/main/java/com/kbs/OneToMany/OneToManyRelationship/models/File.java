@@ -1,16 +1,30 @@
 package com.kbs.OneToMany.OneToManyRelationship.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "files")
 public class File {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "extensionType")
     private String extensionType;
-    private double size;
+    @Column(name = "fileSize")
+    private double fileSize;
+    //there can be many files to one folder
+    @ManyToOne
+    // the file must have a folder before saved to the database
+    @JoinColumn(name="folder_id", nullable = false)
     private Folder folder;
 
     public File(String name, String extensionType, double size, Folder folder) {
         this.name = name;
         this.extensionType = extensionType;
-        this.size = size;
+        this.fileSize = fileSize;
         this.folder = folder;
     }
 
@@ -41,12 +55,12 @@ public class File {
         this.extensionType = extensionType;
     }
 
-    public double getSize() {
-        return size;
+    public double getfileSize() {
+        return fileSize;
     }
 
-    public void setSize(double size) {
-        this.size = size;
+    public void setfileSize(double size) {
+        this.fileSize = size;
     }
 
     public Folder getFolder() {
