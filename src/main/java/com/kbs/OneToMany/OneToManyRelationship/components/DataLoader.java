@@ -41,8 +41,23 @@ public class DataLoader implements ApplicationRunner {
         Folder week2 = new Folder("Week2", jim);
         folderRepository.save(week2);
 
+        Folder guitar1 = new Folder("guitar1", bob);
+        folderRepository.save(week1);
+
+        Folder guitar2 = new Folder("guitar2", bob);
+        folderRepository.save(week2);
+
         File css = new File("cssPractice",".css", 3.2, week1);
         fileRepository.save(css);
+
+        File html = new File("htmlPractice",".html", 2.1, week2);
+        fileRepository.save(html);
+
+        File practiceChords = new File("practiceChords",".dox", 1.1, guitar1);
+        fileRepository.save(practiceChords);
+
+        File newSong = new File("newSong",".xml", 12, guitar2);
+        fileRepository.save(newSong);
 
 
 
