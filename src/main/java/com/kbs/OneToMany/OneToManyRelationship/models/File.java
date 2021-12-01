@@ -1,5 +1,7 @@
 package com.kbs.OneToMany.OneToManyRelationship.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -21,7 +23,7 @@ public class File {
     @JoinColumn(name="folder_id", nullable = false)
     private Folder folder;
 
-    public File(String name, String extensionType, double size, Folder folder) {
+    public File(String name, String extensionType, double fileSize, Folder folder) {
         this.name = name;
         this.extensionType = extensionType;
         this.fileSize = fileSize;

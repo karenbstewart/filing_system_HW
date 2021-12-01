@@ -32,6 +32,9 @@ public class DataLoader implements ApplicationRunner {
         User bob = new User("Bob");
         userRepository.save(bob);
 
+        User sinatra = new User("Sinatra");
+        userRepository.save(sinatra);
+
         Folder week1 = new Folder("Week1", jim);
         folderRepository.save(week1);
 
@@ -40,5 +43,8 @@ public class DataLoader implements ApplicationRunner {
 
         File css = new File("cssPractice",".css", 3.2, week1);
         fileRepository.save(css);
+
+
+
     }
 }

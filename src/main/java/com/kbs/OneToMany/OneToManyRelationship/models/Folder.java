@@ -1,5 +1,7 @@
 package com.kbs.OneToMany.OneToManyRelationship.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,7 @@ public class Folder {
     private Long id;
     @Column(name = "title")
     private String title;
+    @JsonIgnoreProperties({"folder"})
     @OneToMany(mappedBy = "folder")
     private List<File> files;
     @ManyToOne
