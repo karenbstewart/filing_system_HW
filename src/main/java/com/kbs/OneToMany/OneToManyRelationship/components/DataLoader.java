@@ -42,10 +42,10 @@ public class DataLoader implements ApplicationRunner {
         folderRepository.save(week2);
 
         Folder guitar1 = new Folder("guitar1", bob);
-        folderRepository.save(week1);
+        folderRepository.save(guitar1);
 
         Folder guitar2 = new Folder("guitar2", bob);
-        folderRepository.save(week2);
+        folderRepository.save(guitar2);
 
         File css = new File("cssPractice",".css", 3.2, week1);
         fileRepository.save(css);
@@ -58,6 +58,9 @@ public class DataLoader implements ApplicationRunner {
 
         File newSong = new File("newSong",".xml", 12, guitar2);
         fileRepository.save(newSong);
+
+        File newSong1 = new File("newSong1",".xml", 12, guitar2);
+        fileRepository.save(newSong1);
 
 
 
